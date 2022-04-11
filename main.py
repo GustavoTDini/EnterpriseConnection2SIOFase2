@@ -1,5 +1,4 @@
 from estoque import estoque
-from produto import produto
 
 valor_venda = float(50)
 custo_compra = float(30)
@@ -94,14 +93,14 @@ def relatorio_anual(lucro_mensal, lucro_mensal_por_produto, valor_de_vendas_mens
     for i, valor in enumerate(lucro_mensal):
         print("O lucro de {} foi {}".format(meses_ano[i], valor))
         lucro_anual += valor
-    print("O lucro anual considerando as venda e os custos de reestocagem mensais é de cada produto vendido é {}".format(lucro_anual))
+    print("O lucro anual considerando as venda e os custos de reestocagem mensais é de {}".format(lucro_anual))
     print("\n")
 
     lucro_anual_por_produto = -custo_inicial
     for i, valor in enumerate(lucro_mensal_por_produto):
         print("O lucro por produto de {} foi {}".format(meses_ano[i], valor))
         lucro_anual_por_produto += valor
-    print("O lucro anual considerando o custo de cada produto vendido é {}".format(lucro_anual_por_produto))
+    print("O lucro anual considerando o custo de cada produto vendido é de {}".format(lucro_anual_por_produto))
     print("\n")
 
     vendas_total = -custo_inicial
