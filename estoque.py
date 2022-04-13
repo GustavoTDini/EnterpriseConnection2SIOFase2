@@ -17,7 +17,7 @@ class Estoque:
         return self.estoque[index]
 
     # função que realiza uma venda, retira o produto mais antigo do estoque e calcula seu lucro,
-    # considerando o custo deste
+    # considerando o custo deste, e considera somente o total do estoque
     def venda(self):
         lucro = 0
         if not self.sem_estoque():
