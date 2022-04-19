@@ -1,7 +1,7 @@
 from estoque import Estoque
 
 
-# função para aceitar apenas 2 repostas para um input
+# função para aceitar apenas 2 repostas para um 'input'
 def input_duas_respostas(pergunta, resposta_a, resposta_b):
     while True:
         resposta = input(pergunta)
@@ -9,7 +9,7 @@ def input_duas_respostas(pergunta, resposta_a, resposta_b):
             return resposta
 
 
-# função para aceitar apenas números para um input
+# função para aceitar apenas números para um 'input'
 def input_somente_numeros(pergunta):
     resposta = "o"
     while not type(resposta) == int:
@@ -45,9 +45,9 @@ def criar_dicionario_json(valor_venda, custo_compra_list, vendas_list, meses):
     dicionario = {}
     for i, mes in enumerate(meses):
         dicionario[i + 1] = {
-            "custo_compra": custo_compra_list[0],
+            "custo_compra": custo_compra_list[i],
             "valor_venda": valor_venda,
-            "vendas": vendas_list[0],
+            "vendas": vendas_list[i],
             "mes": mes
         }
     return dicionario

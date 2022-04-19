@@ -14,10 +14,11 @@ meses_ano = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julio"
 selecao = input_duas_respostas("Deseja Cadastrar novos valores? S - sim, N - não ", "s", "n")
 print("\n")
 
-# Caso o
+# Caso o usuário selecione S - abrirá as opções de colocar novos valores
 if selecao == "s":
-    valor_venda = input_somente_numeros("Digite o valor de venda do produto de: ")
-    estoque_minimo = input_somente_numeros("Digite o valor de estoque minimo: ")
+    valor_venda = input_somente_numeros("Digite o valor de venda do produto: ")
+    estoque_minimo = input_somente_numeros("Digite o valor de estoque mínimo: ")
+    custo_compra = input_somente_numeros("Digite o valor do custo inicial: ")
     for i in range(0, len(meses_ano)):
         custo_compra_anual[i] = input_somente_numeros("Digite o custo do produto de {}: ".format(meses_ano[i]))
         vendas_anual[i] = input_somente_numeros("Digite as vendas de {}: ".format(meses_ano[i]))
