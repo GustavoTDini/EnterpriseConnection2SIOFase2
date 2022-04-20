@@ -101,7 +101,7 @@ def otimizar_estoque(estoque_atual, vendas_anual, valor_venda, custo_compra, val
         if lucro_teste > maior_lucro:
             maior_lucro = lucro_teste
             estoque_otimizado = estoque_teste
-    return "O melhor estoque para se manter é {}, que dará um lucro de {}".format(estoque_otimizado, maior_lucro)
+    return "O melhor estoque para se manter é {}, que dará um lucro de R$ {}".format(estoque_otimizado, maior_lucro)
 
 
 # Função que recebe os valores da verificação e os coleta em dados legíveis
@@ -110,31 +110,31 @@ def relatorio_anual(lucro_mensal, lucro_mensal_por_produto, valor_de_vendas_mens
     # Considerando o lucro pelas vendas temos que retirar o custo de estoque inicial
     lucro_anual = - custo_inicial_do_estoque
     for i, valor in enumerate(lucro_mensal):
-        print_save("O lucro de {} foi {}".format(meses_ano[i], valor), arquivo)
+        print_save("O lucro de {} foi R$ {}".format(meses_ano[i], valor), arquivo)
         lucro_anual += valor
-    print_save("O lucro anual considerando as venda e os custos de re-estocagem mensais é de {}".format(lucro_anual),
+    print_save("O lucro anual considerando as venda e os custos de re-estocagem mensais é de R$ {}".format(lucro_anual),
                arquivo)
     print_save("\n", arquivo)
 
     # Considerando o lucro por lucro individual de cada produto, temos que retirar o custo do estoque final
     lucro_anual_por_produto = -custo_final_do_estoque
     for i, valor in enumerate(lucro_mensal_por_produto):
-        print_save("O lucro por produto de {} foi {}".format(meses_ano[i], valor), arquivo)
+        print_save("O lucro por produto de {} foi R$ {}".format(meses_ano[i], valor), arquivo)
         lucro_anual_por_produto += valor
-    print_save("O lucro anual considerando o custo de cada produto vendido é de {}".format(lucro_anual_por_produto),
+    print_save("O lucro anual considerando o custo de cada produto vendido é de R$ {}".format(lucro_anual_por_produto),
                arquivo)
     print_save("\n", arquivo)
 
     vendas_total = -custo_inicial_do_estoque
     for i, valor in enumerate(valor_de_vendas_mensal):
-        print_save("A receita de vendas de {} foi de {}".format(meses_ano[i], valor), arquivo)
+        print_save("A receita de vendas de {} foi de R$ {}".format(meses_ano[i], valor), arquivo)
         vendas_total += valor
-    print_save("O receita de vendas do ano todo foi de {}".format(vendas_total), arquivo)
+    print_save("O receita de vendas do ano todo foi de R$ {}".format(vendas_total), arquivo)
     print_save("\n", arquivo)
 
     custo_estoque_total = custo_inicial_do_estoque
     for i, valor in enumerate(custo_de_re_estocagem_mensal):
-        print_save("O custo de estocagem de {} foi de {}".format(meses_ano[i], valor), arquivo)
+        print_save("O custo de estocagem de {} foi de R$ {}".format(meses_ano[i], valor), arquivo)
         custo_estoque_total += valor
-    print_save("O custo com o estoque durante todo o ano foi de {}".format(custo_estoque_total), arquivo)
+    print_save("O custo com o estoque durante todo o ano foi de R$ {}".format(custo_estoque_total), arquivo)
     print_save("\n", arquivo)
